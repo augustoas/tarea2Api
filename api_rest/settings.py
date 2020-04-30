@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api_hamburguers',
     'rest_framework',
-    'heroku',
     
 ]
 
