@@ -1,0 +1,64 @@
+[
+  {
+    "model": "api_hamburguers.Hamburguesa",
+    "pk": 1,
+    "fields": {
+        "nombre": "Juicy Lucy",
+        "precio": 6900,
+        "descripcion": "Hamburguesa de 300 gr, acompañada de queso fundido, tocino, aros de cebolla, tomate y salsa BBQ",
+        "imagen": "https://elsoldesanjuan.com.ar/wp-content/uploads/2018/12/46341978_561862884278744_7131474047408603835_n.jpg",
+        "ingredientes": []
+    }
+  },
+  {
+    "model": "api_hamburguers.Hamburguesa",
+    "pk": 2,
+    "fields": {
+        "nombre": "Veggie",
+        "precio": 7200,
+        "descripcion": "Hamburguesa de garbanzos, acompañada de lechuga, tomate, cebolla morada y zanahoria",
+        "imagen": "https://www.natursan.net/wp-content/hamburguesa-vegetal-receta.jpg",
+        "ingredientes": []
+    }
+  },
+
+  {
+    "model": "api_hamburguers.Ingrediente",
+    "pk": 2,
+    "fields": {
+        "nombre": "Ketchup",
+        "descripcion": "Ketchup elaborado con tomates orgánicos"
+
+    }
+  },
+
+  {
+    "model": "api_hamburguers.Ingrediente",
+    "pk": 2,
+    "fields": {
+        "nombre": "Mayonesa",
+        "descripcion": "Exquisita mayonesa casera"
+
+    }
+  },
+
+  {
+    "model": "api_hamburguers.Ingrediente",
+    "pk": 2,
+    "fields": {
+        "nombre": "Palta",
+        "descripcion": "Paltas orgánicas"
+
+    }
+  },
+
+  {
+    "model": "api_hamburguers.Ingrediente",
+    "pk": 2,
+    "fields": {
+        "nombre": "Queso Cheedar",
+        "descripcion": "Queso Cheedar Premium"
+
+    }
+  }
+]
