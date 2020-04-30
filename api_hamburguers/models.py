@@ -1,5 +1,4 @@
 from django.db import models
-from django.conf import settings
 
 # Create your models here.
 
@@ -10,7 +9,7 @@ class Ingrediente(models.Model):
 class Hamburguesa(models.Model):
     nombre = models.CharField(max_length=100)
     precio = models.IntegerField()
-    descripcion = models.CharField(max_length=100)
-    imagen = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=1000)
+    imagen = models.CharField(max_length=1000)
     ingredientes = models.ManyToManyField(Ingrediente, blank=True)
     

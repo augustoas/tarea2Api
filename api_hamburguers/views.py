@@ -14,7 +14,7 @@ def hamburguer_list(request):
 
         for index,h in enumerate(serializer.data):
             for index_2,i in enumerate(h['ingredientes']):                
-                serializer.data[index]['ingredientes'][index_2] = {'path': f"https://hamburgueseria.com/ingrediente/{i}"}
+                serializer.data[index]['ingredientes'][index_2] = {'path': f"https://herokudjangoapihamburguer.herokuapp.com/ingrediente/{i}"}
             
         return Response({'message': 'Hamburguesas', 'body': serializer.data}, status=status.HTTP_200_OK)
 
@@ -45,7 +45,7 @@ def hamburguer_detail(request,pk):
         serializer = HamburguesaSerializer(hamburguer)
 
         for index,i in enumerate(serializer.data['ingredientes']):                
-            serializer.data['ingredientes'][index] = {'path': f"https://hamburgueseria.com/ingrediente/{i}"}
+            serializer.data['ingredientes'][index] = {'path': f"https://herokudjangoapihamburguer.herokuapp.com/ingrediente/{i}"}
         
         return Response({'message': 'Operacion exitosa ', 'body': serializer.data}, status=status.HTTP_200_OK)
 
@@ -56,7 +56,7 @@ def hamburguer_detail(request,pk):
             serializer.save()
 
             for index,i in enumerate(serializer.data['ingredientes']):                
-                serializer.data['ingredientes'][index] = {'path': f"https://hamburgueseria.com/ingrediente/{i}"}
+                serializer.data['ingredientes'][index] = {'path': f"https://herokudjangoapihamburguer.herokuapp.com/ingrediente/{i}"}
 
             return Response({'message': 'Operacion exitosa ', 'body': serializer.data}, status=status.HTTP_200_OK)
         return Response({'message': 'Parámetros invalidos ', 'body': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
@@ -127,7 +127,7 @@ def hamburguer_ingredient(request,pk_h,pk_i):
 
         for index,h in enumerate(serializer_h.data):
             for index_2,i in enumerate(h['ingredientes']):                
-                serializer_h.data[index]['ingredientes'][index_2] = {'path': f"https://hamburgueseria.com/ingrediente/{i}"}
+                serializer_h.data[index]['ingredientes'][index_2] = {'path': f"https://herokudjangoapihamburguer.herokuapp.com/ingrediente/{i}"}
        
 
         return Response({'message': 'Operacion exitosa ', 'body': {'hamburguesa': serializer_h.data, 'ingrediente': serializer_i.data}}, status=status.HTTP_200_OK)
@@ -141,7 +141,7 @@ def hamburguer_ingredient(request,pk_h,pk_i):
 
         for index,h in enumerate(serializer_h.data):
             for index_2,i in enumerate(h['ingredientes']):                
-                serializer_h.data[index]['ingredientes'][index_2] = {'path': f"https://hamburgueseria.com/ingrediente/{i}"}
+                serializer_h.data[index]['ingredientes'][index_2] = {'path': f"https://herokudjangoapihamburguer.herokuapp.com/ingrediente/{i}"}
             
         return Response({'message': 'Ingrediente agregado', 'body': {'hamburguesa': serializer_h.data, 'ingrediente': serializer_i.data}}, status=status.HTTP_201_CREATED)
 
@@ -155,6 +155,6 @@ def hamburguer_ingredient(request,pk_h,pk_i):
 
         for index,h in enumerate(serializer_h.data):
             for index_2,i in enumerate(h['ingredientes']):                
-                serializer_h.data[index]['ingredientes'][index_2] = {'path': f"https://hamburgueseria.com/ingrediente/{i}"}
+                serializer_h.data[index]['ingredientes'][index_2] = {'path': f"https://herokudjangoapihamburguer.herokuapp.com/ingrediente/{i}"}
 
         return Response({'message': 'Ingrediente retirado', 'body': {'hamburguesa': serializer_h.data, 'ingrediente': serializer_i.data}}, status=status.HTTP_200_OK)
