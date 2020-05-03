@@ -38,7 +38,7 @@ def hamburguer_detail(request,pk):
     
     except:
 
-        return Response(serializer.errors,status=status.HTTP_404_NOT_FOUND)
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET': #OK
         
