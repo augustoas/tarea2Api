@@ -59,11 +59,11 @@ def hamburguer_detail(request,pk):
                 serializer.data['ingredientes'][index] = {'path': f"https://herokudjangoapihamburguer.herokuapp.com/ingrediente/{i}"}
 
             return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE': #OK
         hamburguer.delete()
-        return Response(serializer.errors,status = status.HTTP_200_OK)
+        return Response(status = status.HTTP_200_OK)
 
 
 @api_view(['GET', 'POST'])
@@ -98,10 +98,10 @@ def ingredient_detail(request,pk): #OK
     elif request.method == 'DELETE': #OK
 
         if Hamburguesa.objects.filter(ingredientes=ingredient).exists():
-            return Response(serializer.errors, status = status.HTTP_409_CONFLICT)
+            return Response(status = status.HTTP_409_CONFLICT)
         else:
             ingredient.delete()
-            return Response(serializer.errors, status = status.HTTP_200_OK)
+            return Response(status = status.HTTP_200_OK)
         
 
 @api_view(['GET','PUT', 'DELETE'])
@@ -157,4 +157,4 @@ def hamburguer_ingredient(request,pk_h,pk_i):
             for index_2,i in enumerate(h['ingredientes']):                
                 serializer_h.data[index]['ingredientes'][index_2] = {'path': f"https://herokudjangoapihamburguer.herokuapp.com/ingrediente/{i}"}
 
-        return Response(serializer_h.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_200_OK)
