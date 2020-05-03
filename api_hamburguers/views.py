@@ -31,7 +31,7 @@ def hamburguer_detail(request,pk):
     
     aux = pk.isdigit()
     if aux == False:
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
         
     try:
         hamburguer = Hamburguesa.objects.get(pk=pk)
@@ -89,7 +89,7 @@ def ingredient_detail(request,pk): #OK
     
     except:
 
-        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET': #OK
         serializer = IngredienteSerializer(ingredient)
@@ -111,13 +111,13 @@ def hamburguer_ingredient(request,pk_h,pk_i):
         hamburguer = Hamburguesa.objects.get(pk=pk_h)
     
     except:
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
     try:
         ingredient = Ingrediente.objects.get(pk=pk_i)
     
     except:
-        return Response(serializer.errors,status=status.HTTP_404_NOT_FOUND)
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET': #OK
         ingredients = Ingrediente.objects.filter(pk=pk_i)
